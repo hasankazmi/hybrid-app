@@ -1,5 +1,6 @@
 import {createAppContainer} from 'react-navigation';
 import {createStackNavigator} from 'react-navigation-stack';
+import {createDrawerNavigator} from 'react-navigation-drawer';
 
 import {
     SafeAreaView,
@@ -18,14 +19,16 @@ import Animate from '../user/Animate';
 import UserDashboard, { SideMenu } from '../user/UserDashboard';
 import UserLogin from '../user/userLogin';
 import UserRegistration from '../user/userRegistration';
+
 import Actechnician from './servicemenComponents/actechnician';
 import Carpenter from './servicemenComponents/carpenter';
 import Electrician from './servicemenComponents/electrician';
 import Plumber from './servicemenComponents/plumber';
-import plumberList from './servicemenComponents/plumberList';
+
 import Profile from '../Screens/Profile';
 import Facilities from '../Screens/Facilities/Facilities';
 import BookingHistory from '../Screens/BookingHistory';
+
 
 
 
@@ -106,7 +109,7 @@ const createstacknavigator = createStackNavigator({
         headerShown: false
     }
     }
-});
+}, {initialRouteName: 'Home'});
 
 const appDrawer = createDrawerNavigator(   
     {
@@ -114,25 +117,10 @@ const appDrawer = createDrawerNavigator(
     },
     {
       contentComponent: SideMenu,
-      drawerWidth: Dimensions.get('window').width
+      drawerWidth: Dimensions.get('window').width * 3/4
     }
   );
 
 
 export default createAppContainer(appDrawer);
-
-// const createstack = createStackNavigator();
-
-// export default () => {
-//     <NavigationContainer>
-//         <createstack.Navigator>
-//             <createstack.Screen name="Animate" component={Animate} />
-//             <createstack.Screen name="UserLogin" component={UserLogin} />
-//             <createstack.Screen name="UserRegistration" component={UserRegistration} />
-//             <createstack.Screen name="UserDashboard" component={UserDashboard} />
-//             <createstack.Screen name="cards" component={Cards} />
-//         </createstack.Navigator>
-
-//     </NavigationContainer>
-// }
 

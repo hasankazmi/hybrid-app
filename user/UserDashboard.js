@@ -12,8 +12,12 @@ import {
     Dimensions,
   } from 'react-native';
 
+import {
+  List,
+  ListItem
+} from 'native-base';
+
 import Feather from 'react-native-vector-icons/Feather';
-import {createStackNavigator} from 'react-navigation-stack';
 
   class UserDashboard extends React.Component{
       
@@ -106,7 +110,42 @@ import {createStackNavigator} from 'react-navigation-stack';
   }
 
 export class SideMenu extends React.Component{
-  
+  render() {
+    return (
+      <SafeAreaView>
+        <View>
+
+        </View>
+        <ScrollView>
+          <List>
+            <ListItem>
+              <Text>Home</Text>
+            </ListItem>
+            <ListItem>
+              <Text>Profile</Text>
+            </ListItem>
+            <ListItem>
+              <Text>Facilities</Text>
+            </ListItem>
+            <ListItem>
+              <Text>Booking History</Text>
+            </ListItem>
+            <ListItem>
+              <Text>Wallet</Text>
+            </ListItem>
+            <ListItem>
+              <Text>Settings</Text>
+            </ListItem>
+          </List>
+        </ScrollView>
+        <List>
+          <ListItem>
+            <Text>Log Out</Text>
+          </ListItem>
+        </List>
+      </SafeAreaView>
+    )
+  }
 }
 
 

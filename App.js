@@ -16,7 +16,6 @@ import {
   StatusBar,
 } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import Plumber from './Screens/components/plumber';
 
 import RootNavStack from './Screens/RootNavStack';
 
